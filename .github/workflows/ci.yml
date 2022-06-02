@@ -11,6 +11,7 @@ env:
 
 jobs:
   build:
+    name: "Build and/or Publish Java ${{ matrix.java_version }} Image"
     strategy:
       matrix:
         java_version: [11, 17]
@@ -37,14 +38,14 @@ jobs:
         with:
           images: ${{ env.IMAGE }}
 
-      - name: Build / Publish OCI Image
+      - name: Build JDK ${{ matrix.java_version }}
         id: publish
         uses: docker/build-push-action@v3
         with:
           context: .
           push: ${{ (github.event_name != 'pull_request') && (github.repository == env.IMAGE) }}
           labels: ${{ steps.meta.outputs.labels }}
-          buildArgs: JDK_VERSION=${{ matrix.java_version }}
+          build-args: JDK_VERSION=${{ matrix.java_version }}
           tags: |
             ${{ env.IMAGE }}:${{ matrix.java_version }}
             ${{ env.IMAGE }}:${{ matrix.java_version }}.${{ github.run_number }}
