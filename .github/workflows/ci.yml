@@ -39,7 +39,7 @@ jobs:
 
       - name: Build / Publish OCI Image
         id: publish
-        uses: docker/build-and-publish-action@v3
+        uses: docker/build-push-action@v3
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
