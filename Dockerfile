@@ -32,6 +32,7 @@ RUN apk upgrade --no-cache && apk add --no-cache \
   sudo \
   tar \
   unzip \
+  vim \
   xz \
   zip \
   zlib
