@@ -3,6 +3,8 @@ Linux JDK Images
 
 OCI Container image based on Alpine Linux, including C compilers, development libraries, and JDK and sbt installations.
 
+[![Build Status][2]][3]
+
 __________________________________
 
 License
@@ -18,3 +20,5 @@ the specific language governing permissions and limitations under the License.
 
 
 [1]: http://www.apache.org/licenses/LICENSE-2.0
+[2]: https://github.com/unganisha/oci-linux/actions/workflows/ci.yml/badge.svg
+[3]: https://github.com/unganisha/oci-linux/actions/workflows/ci.yml
